@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-28 14:25:48
+ * @LastEditTime: 2021-01-28 15:03:29
  * @FilePath: \shuanglong_admin\src\main.js
  * @Description: main javascript
  */
