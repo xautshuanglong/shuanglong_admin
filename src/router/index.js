@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-28 14:37:56
+ * @LastEditTime: 2021-01-29 01:08:54
  * @FilePath: \shuanglong_admin\src\router\index.js
  * @Description: router
  */
@@ -27,7 +27,8 @@ const routes = [
     {
         path: '/webui',
         name: 'WebUI',
-        component: WebUI
+        component: WebUI,
+        children: WebUI.routes
     }
 ]
 

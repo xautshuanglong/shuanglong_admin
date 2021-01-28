@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-29 01:00:09
+ * @LastEditTime: 2021-01-29 02:03:12
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
@@ -11,28 +11,35 @@
         <el-container style="height: 700px; border: 1px solid blue;">
             <el-aside style="width:220px;">
                 <span style="font-size: 24px; line-height: 60px;">WebUI</span>
-                <el-menu :default-openeds="['1']">
-                <el-submenu index="1">
-                    <template v-slot:title><i class="el-icon-message"></i>页面布局</template>
-                    <el-menu-item index="1-1">选项1</el-menu-item>
-                    <el-menu-item index="1-2">选项2</el-menu-item>
-                    <el-menu-item index="1-3">选项3</el-menu-item>
-                    <el-menu-item index="1-4">选项4</el-menu-item>
-                </el-submenu>
-                <el-submenu index="2">
-                    <template v-slot:title><i class="el-icon-menu"></i>交换控件</template>
-                    <el-menu-item index="2-1">选项1</el-menu-item>
-                    <el-menu-item index="2-2">选项2</el-menu-item>
-                    <el-menu-item index="2-3">选项3</el-menu-item>
-                    <el-menu-item index="2-4">选项4</el-menu-item>
-                </el-submenu>
-                <el-submenu index="3">
-                    <template v-slot:title><i class="el-icon-setting"></i>过渡动画</template>
-                    <el-menu-item index="3-1">选项1</el-menu-item>
-                    <el-menu-item index="3-2">选项2</el-menu-item>
-                    <el-menu-item index="3-3">选项3</el-menu-item>
-                    <el-menu-item index="3-4">选项4</el-menu-item>
-                </el-submenu>
+                <el-menu :default-openeds="['1']" :default-active="'1-1'" @select="onMenuItemSelect">
+                    <el-submenu index="1">
+                        <template v-slot:title><i class="el-icon-message"></i>页面布局</template>
+                        <el-menu-item index="1-1">空白</el-menu-item>
+                        <el-menu-item index="1-2">选项2</el-menu-item>
+                        <el-menu-item index="1-3">选项3</el-menu-item>
+                        <el-menu-item index="1-4">选项4</el-menu-item>
+                    </el-submenu>
+                    <el-submenu index="2">
+                        <template v-slot:title><i class="el-icon-menu"></i>交互控件</template>
+                        <el-menu-item index="2-1">选项1</el-menu-item>
+                        <el-menu-item index="2-2">选项2</el-menu-item>
+                        <el-menu-item index="2-3">选项3</el-menu-item>
+                        <el-menu-item index="2-4">选项4</el-menu-item>
+                    </el-submenu>
+                    <el-submenu index="3">
+                        <template v-slot:title><i class="el-icon-setting"></i>数据展示</template>
+                        <el-menu-item index="3-1">数据表格</el-menu-item>
+                        <el-menu-item index="3-2">选项2</el-menu-item>
+                        <el-menu-item index="3-3">选项3</el-menu-item>
+                        <el-menu-item index="3-4">选项4</el-menu-item>
+                    </el-submenu>
+                    <el-submenu index="4">
+                        <template v-slot:title><i class="el-icon-setting"></i>过渡动画</template>
+                        <el-menu-item index="4-1">选项1</el-menu-item>
+                        <el-menu-item index="4-2">选项2</el-menu-item>
+                        <el-menu-item index="4-3">选项3</el-menu-item>
+                        <el-menu-item index="4-4">选项4</el-menu-item>
+                    </el-submenu>
                 </el-menu>
             </el-aside>
 
@@ -51,8 +58,7 @@
                     <span>王小虎</span>
                 </el-header>
                 <el-main>
-                    <!-- <router-view/> -->
-                    <ElementDataTable msg="ElementPlus Data Table Testing"/>
+                    <router-view/>
                 </el-main>
             </el-container>
         </el-container>
@@ -61,24 +67,42 @@
 
 <script>
 import ElementDataTable from '@/components/ElementDataTable.vue'
+import ElementEmpty from '@/components/ElementEmpty.vue'
 
 export default {
     name: 'WebUI',
-    components: {
-        ElementDataTable
-    },
+    routes: [
+        {
+            path: '',
+            component: ElementEmpty
+        },
+        {
+            path: 'element-empty',
+            component: ElementEmpty
+        },
+        {
+            path: 'element-data-table',
+            component: ElementDataTable,
+            props: {
+                msg: 'ElementPlus Data Table Testing'
+            }
+        }
+    ],
     data () {
-        const item = {
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-        }
-        return {
-            tableData: Array(20).fill(item)
-        }
+        return {}
     },
     mounted () {
         console.log('WebUI --> mounted !')
+    },
+    methods: {
+        onMenuItemSelect (index, indexPath) {
+            console.log('Index=', index, 'IndexPath=', indexPath)
+            if (index === '1-1') {
+                this.$router.push('/webui/element-empty')
+            } else if (index === '3-1') {
+                this.$router.push('/webui/element-data-table')
+            }
+        }
     }
 }
 </script>
