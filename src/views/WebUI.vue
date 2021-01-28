@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-28 23:44:42
+ * @LastEditTime: 2021-01-29 01:00:09
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
@@ -50,16 +50,9 @@
                     </el-dropdown>
                     <span>王小虎</span>
                 </el-header>
-
                 <el-main>
-                    <el-table :data="tableData">
-                        <el-table-column prop="date" label="日期" width="140">
-                        </el-table-column>
-                        <el-table-column prop="name" label="姓名" width="120">
-                        </el-table-column>
-                        <el-table-column prop="address" label="地址">
-                        </el-table-column>
-                    </el-table>
+                    <!-- <router-view/> -->
+                    <ElementDataTable msg="ElementPlus Data Table Testing"/>
                 </el-main>
             </el-container>
         </el-container>
@@ -67,8 +60,13 @@
 </template>
 
 <script>
+import ElementDataTable from '@/components/ElementDataTable.vue'
+
 export default {
     name: 'WebUI',
+    components: {
+        ElementDataTable
+    },
     data () {
         const item = {
             date: '2016-05-02',
