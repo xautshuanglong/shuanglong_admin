@@ -12,7 +12,6 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "element-plus": "^1.0.2-beta.28",
-    "element-ui": "^2.15.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
@@ -39,6 +38,7 @@
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
+    "vue-cli-plugin-element-plus": "0.0.13",
     "vue-jest": "^5.0.0-0"
   },
   "eslintConfig": {
