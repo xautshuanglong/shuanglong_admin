@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-28 09:36:53
+ * @LastEditTime: 2021-01-28 10:55:16
  * @FilePath: \shuanglong_admin\src\components\HelloWorld.vue
  * @Description: HelloWorld
 -->
@@ -44,10 +44,10 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+    name: 'HelloWorld',
+    props: {
+        msg: String
+    }
 }
 </script>
 
