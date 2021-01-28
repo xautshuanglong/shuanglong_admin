@@ -2,14 +2,15 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-28 19:34:15
+ * @LastEditTime: 2021-01-28 23:44:42
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
 <template>
     <div class="WebUI">
-        <el-container style="height: 700px; border: 1px solid #eee">
-            <el-aside width="220px" style="background-color: rgb(238, 241, 246)">
+        <el-container style="height: 700px; border: 1px solid blue;">
+            <el-aside style="width:220px;">
+                <span style="font-size: 24px; line-height: 60px;">WebUI</span>
                 <el-menu :default-openeds="['1']">
                 <el-submenu index="1">
                     <template v-slot:title><i class="el-icon-message"></i>页面布局</template>
@@ -38,7 +39,7 @@
             <el-container>
                 <el-header style="text-align: right; font-size: 20px;">
                     <el-dropdown>
-                        <i class="el-icon-setting" style="margin-right: 15px;"></i>
+                        <i class="el-icon-setting" style="margin-top:20px; margin-right: 10px; font-size: 24px;"></i>
                         <template #dropdown>
                             <el-dropdown-menu style="">
                                 <el-dropdown-item>查看</el-dropdown-item>
@@ -86,12 +87,20 @@ export default {
 
 <style>
   .el-header {
-    background-color: #B3C0D1;
-    color: #333;
+    background-color: #5658f8b6;
+    color: rgb(56, 55, 55);
     line-height: 60px;
   }
 
   .el-aside {
-    color: rgb(230, 9, 9);
+    background-color: #73c5f5e8;
+  }
+
+  .el-submenu {
+      background-color: #c6dcf0e0;
+  }
+
+  .el-menu-item {
+      background-color: #accbe7e0;
   }
 </style>
