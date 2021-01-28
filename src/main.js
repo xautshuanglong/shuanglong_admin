@@ -14,6 +14,7 @@ import store from './store'
 
 import 'element-ui/lib/theme-chalk/index.css'
 import ElementUI from 'element-ui'
+import installElementPlus from './plugins/element'
 
 createApp(App)
     .use(store)
