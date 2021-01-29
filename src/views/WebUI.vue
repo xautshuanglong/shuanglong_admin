@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-29 11:33:32
+ * @LastEditTime: 2021-01-29 17:48:36
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
@@ -13,10 +13,10 @@
                 <div class="same-as-header">
                     <span style="font-size: 24px; line-height: 60px;">WebUI</span>
                 </div>
-                <el-menu :default-openeds="['1']" :default-active="'1-1'" @select="onMenuItemSelect">
+                <el-menu :default-openeds="['1']" :router=true @select="onMenuItemSelect">
                     <el-submenu index="1">
                         <template v-slot:title><i class="el-icon-message"></i>页面布局</template>
-                        <el-menu-item index="1-1">空白</el-menu-item>
+                        <el-menu-item index="/webui/element-empty">空白</el-menu-item>
                         <el-menu-item index="1-2">选项2</el-menu-item>
                         <el-menu-item index="1-3">选项3</el-menu-item>
                         <el-menu-item index="1-4">选项4</el-menu-item>
@@ -30,10 +30,10 @@
                     </el-submenu>
                     <el-submenu index="3">
                         <template v-slot:title><i class="el-icon-setting"></i>数据展示</template>
-                        <el-menu-item index="3-1">数据表格</el-menu-item>
-                        <el-menu-item index="3-2">选项2</el-menu-item>
-                        <el-menu-item index="3-3">选项3</el-menu-item>
-                        <el-menu-item index="3-4">选项4</el-menu-item>
+                        <el-menu-item index="/webui/element-datatable" >数据表格</el-menu-item>
+                        <el-menu-item index="/webui/element-pagination">数据分页</el-menu-item>
+                        <el-menu-item index="3-3" :disabled=true>选项3</el-menu-item>
+                        <el-menu-item index="3-4" :disabled=true>选项4</el-menu-item>
                     </el-submenu>
                     <el-submenu index="4">
                         <template v-slot:title><i class="el-icon-setting"></i>过渡动画</template>
@@ -70,6 +70,7 @@
 <script>
 import ElementDataTable from '@/components/ElementDataTable.vue'
 import ElementEmpty from '@/components/ElementEmpty.vue'
+import ElementPagination from '@/components/ElementPagination.vue'
 
 export default {
     name: 'WebUI',
@@ -80,13 +81,23 @@ export default {
         },
         {
             path: 'element-empty',
+            name: 'ElementEmpty',
             component: ElementEmpty
         },
         {
-            path: 'element-data-table',
+            path: 'element-datatable',
+            name: 'ElementDataTable',
             component: ElementDataTable,
             props: {
-                msg: 'ElementPlus Data Table Testing'
+                title: 'ElementPlus Data Table Testing'
+            }
+        },
+        {
+            path: 'element-pagination',
+            name: 'ElementPagination',
+            component: ElementPagination,
+            props: {
+                title: 'ElementPlus Data Pagination Testing'
             }
         }
     ],
@@ -95,15 +106,13 @@ export default {
     },
     mounted () {
         console.log('WebUI --> mounted !')
+        console.log('route=', this.$route)
+        console.log('route.path=', this.$route.path)
+        console.log('route.query=', this.$route.query)
     },
     methods: {
         onMenuItemSelect (index, indexPath) {
             console.log('Index=', index, 'IndexPath=', indexPath)
-            if (index === '1-1') {
-                this.$router.push('/webui/element-empty')
-            } else if (index === '3-1') {
-                this.$router.push('/webui/element-data-table')
-            }
         }
     }
 }

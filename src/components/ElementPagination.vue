@@ -2,12 +2,12 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-29 00:51:40
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-29 16:54:35
- * @FilePath: \shuanglong_admin\src\components\ElementDataTable.vue
- * @Description: ElementPlus data table
+ * @LastEditTime: 2021-01-29 17:24:29
+ * @FilePath: \shuanglong_admin\src\components\ElementPagination.vue
+ * @Description: ElementPlus data pagination
 -->
 <template>
-  <div class="element-datatable">
+  <div class="element-pagination">
     <h1>{{ title }}</h1>
     <el-table :data="tableData">
         <el-table-column prop="date" label="日期" width="140">
@@ -22,7 +22,7 @@
 
 <script>
 export default {
-    name: 'ElementDataTable',
+    name: 'ElementPagination',
     props: {
         title: String
     },
