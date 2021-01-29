@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-29 17:48:36
+ * @LastEditTime: 2021-01-29 23:12:51
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
@@ -16,7 +16,7 @@
                 <el-menu :default-openeds="['1']" :router=true @select="onMenuItemSelect">
                     <el-submenu index="1">
                         <template v-slot:title><i class="el-icon-message"></i>页面布局</template>
-                        <el-menu-item index="/webui/element-empty">空白</el-menu-item>
+                        <el-menu-item index="/webui/element-empty">空白页面</el-menu-item>
                         <el-menu-item index="1-2">选项2</el-menu-item>
                         <el-menu-item index="1-3">选项3</el-menu-item>
                         <el-menu-item index="1-4">选项4</el-menu-item>
@@ -32,7 +32,7 @@
                         <template v-slot:title><i class="el-icon-setting"></i>数据展示</template>
                         <el-menu-item index="/webui/element-datatable" >数据表格</el-menu-item>
                         <el-menu-item index="/webui/element-pagination">数据分页</el-menu-item>
-                        <el-menu-item index="3-3" :disabled=true>选项3</el-menu-item>
+                        <el-menu-item index="/webui/element-progress"  >进度显示</el-menu-item>
                         <el-menu-item index="3-4" :disabled=true>选项4</el-menu-item>
                     </el-submenu>
                     <el-submenu index="4">
@@ -71,6 +71,7 @@
 import ElementDataTable from '@/components/ElementDataTable.vue'
 import ElementEmpty from '@/components/ElementEmpty.vue'
 import ElementPagination from '@/components/ElementPagination.vue'
+import ElementProgress from '@/components/ElementProgress.vue'
 
 export default {
     name: 'WebUI',
@@ -99,6 +100,11 @@ export default {
             props: {
                 title: 'ElementPlus Data Pagination Testing'
             }
+        },
+        {
+            path: 'element-progress',
+            name: 'ElementProgress',
+            component: ElementProgress
         }
     ],
     data () {
