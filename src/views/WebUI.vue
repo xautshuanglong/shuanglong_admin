@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-29 02:03:12
+ * @LastEditTime: 2021-01-29 11:33:32
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
@@ -10,7 +10,9 @@
     <div class="WebUI">
         <el-container style="height: 700px; border: 1px solid blue;">
             <el-aside style="width:220px;">
-                <span style="font-size: 24px; line-height: 60px;">WebUI</span>
+                <div class="same-as-header">
+                    <span style="font-size: 24px; line-height: 60px;">WebUI</span>
+                </div>
                 <el-menu :default-openeds="['1']" :default-active="'1-1'" @select="onMenuItemSelect">
                     <el-submenu index="1">
                         <template v-slot:title><i class="el-icon-message"></i>页面布局</template>
@@ -55,7 +57,7 @@
                             </el-dropdown-menu>
                         </template>
                     </el-dropdown>
-                    <span>王小虎</span>
+                    <span>Shuanglong</span>
                 </el-header>
                 <el-main>
                     <router-view/>
@@ -108,21 +110,25 @@ export default {
 </script>
 
 <style>
-  .el-header {
-    background-color: #5658f8b6;
-    color: rgb(56, 55, 55);
-    line-height: 60px;
-  }
+    .same-as-header {
+        background-color: #49b3f0;
+    }
 
-  .el-aside {
-    background-color: #73c5f5e8;
-  }
+    .el-header {
+        background-color: #49b3f0;
+        color: rgb(56, 55, 55);
+        line-height: 60px;
+    }
 
-  .el-submenu {
-      background-color: #c6dcf0e0;
-  }
+    .el-aside {
+        background-color: #73c5f5e8;
+    }
 
-  .el-menu-item {
-      background-color: #accbe7e0;
-  }
+    .el-submenu {
+        background-color: #c6dcf0e0;
+    }
+
+    .el-menu-item {
+        background-color: #accbe7e0;
+    }
 </style>

@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-29 00:51:40
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-29 00:56:07
+ * @LastEditTime: 2021-01-29 11:26:31
  * @FilePath: \shuanglong_admin\src\components\ElementDataTable.vue
  * @Description: ElementPlus data table
 -->
@@ -29,7 +29,7 @@ export default {
     data () {
         const item = {
             date: '2016-05-02',
-            name: '王小虎',
+            name: '双龙',
             address: '上海市普陀区金沙江路 1518 弄'
         }
         return {
