@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-30 22:15:35
+ * @LastEditTime: 2021-01-30 22:45:53
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
@@ -79,7 +79,11 @@
 </template>
 
 <script>
-import { onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, onActivated, onDeactivated, onErrorCaptured, onRenderTracked, onRenderTriggered } from 'vue'
+import {
+    onBeforeMount, onMounted, onBeforeUpdate, onUpdated,
+    onBeforeUnmount, onUnmounted, onActivated, onDeactivated,
+    onErrorCaptured, onRenderTracked, onRenderTriggered, ref
+} from 'vue'
 import ElementEmpty from '@/components/element_ui/ElementEmpty.vue'
 import ElementButton from '@/components/element_ui/ElementButton.vue'
 import ElementRadio from '@/components/element_ui/ElementRadio.vue'
@@ -165,43 +169,53 @@ export default {
         }
     ],
     data () {
+        console.log('WebUI --> data !')
         return {}
     },
     setup () {
+        const id = ref(1)
+
         console.log('WebUI --> setup !')
         onBeforeMount(() => {
-            console.log('WebUI -> setup -> onBeforeMount')
+            console.log('WebUI --> setup --> onBeforeMount')
         })
         onMounted(() => {
-            console.log('WebUI -> setup -> onMounted')
+            console.log('WebUI --> setup --> onMounted')
         })
         onBeforeUpdate(() => {
-            console.log('WebUI -> setup -> onBeforeUpdate')
+            console.log('WebUI --> setup --> onBeforeUpdate')
         })
         onUpdated(() => {
-            console.log('WebUI -> setup -> onUpdated')
+            console.log('WebUI --> setup --> onUpdated')
         })
         onBeforeUnmount(() => {
-            console.log('WebUI -> setup -> onBeforeUnmount')
+            console.log('WebUI --> setup --> onBeforeUnmount')
         })
         onUnmounted(() => {
-            console.log('WebUI -> setup -> onUnmounted')
+            console.log('WebUI --> setup --> onUnmounted')
         })
         onActivated(() => {
-            console.log('WebUI -> setup -> onActivated')
+            console.log('WebUI --> setup --> onActivated')
         })
         onDeactivated(() => {
-            console.log('WebUI -> setup -> onDeactivated')
+            console.log('WebUI --> setup --> onDeactivated')
         })
         onErrorCaptured(() => {
-            console.log('WebUI -> setup -> onErrorCaptured')
+            console.log('WebUI --> setup --> onErrorCaptured')
         })
         onRenderTracked(() => {
-            console.log('WebUI -> setup -> onRenderTracked')
+            console.log('WebUI --> setup --> onRenderTracked')
         })
         onRenderTriggered(() => {
-            console.log('WebUI -> setup -> onRenderTriggered')
+            console.log('WebUI --> setup --> onRenderTriggered')
         })
+
+        setTimeout(() => {
+            console.log('WebUI --> timeout change value')
+            id.value = 2
+        }, 2000)
+
+        return { id }
     },
     beforeCreate () {
         console.log('WebUI --> before create !')
