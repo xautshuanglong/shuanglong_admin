@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-30 22:45:53
+ * @LastEditTime: 2021-01-30 23:49:52
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
@@ -68,7 +68,7 @@
                             </el-dropdown-menu>
                         </template>
                     </el-dropdown>
-                    <span>Shuanglong</span>
+                    <span>Shuanglong {{id}}</span>
                 </el-header>
                 <el-main>
                     <router-view/>
@@ -173,7 +173,7 @@ export default {
         return {}
     },
     setup () {
-        const id = ref(1)
+        const id = ref(0)
 
         console.log('WebUI --> setup !')
         onBeforeMount(() => {
@@ -210,9 +210,9 @@ export default {
             console.log('WebUI --> setup --> onRenderTriggered')
         })
 
-        setTimeout(() => {
+        setInterval(() => {
             console.log('WebUI --> timeout change value')
-            id.value = 2
+            id.value += 2
         }, 2000)
 
         return { id }
@@ -247,6 +247,12 @@ export default {
     },
     deactivated () {
         console.log('WebUI --> deactived !')
+    },
+    renderTracked () {
+        console.log('WebUI --> renderTracked !')
+    },
+    renderTriggered () {
+        console.log('WebUI --> renderTriggered !')
     },
     errorCaptured () {
         console.log('WebUI --> error captured !')

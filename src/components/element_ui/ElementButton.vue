@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-29 00:51:40
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-30 13:21:32
+ * @LastEditTime: 2021-01-31 00:04:18
  * @FilePath: \shuanglong_admin\src\components\element_ui\ElementButton.vue
  * @Description: ElementPlus Button
 -->
@@ -41,6 +41,14 @@
         <el-button type="info" icon="el-icon-message" circle></el-button>
         <el-button type="warning" icon="el-icon-star-off" circle></el-button>
         <el-button type="danger" icon="el-icon-delete" circle></el-button>
+    </el-row>
+    <el-row>
+        <el-button icon="el-icon-search" circle plain></el-button>
+        <el-button type="primary" icon="el-icon-edit" circle plain></el-button>
+        <el-button type="success" icon="el-icon-check" circle plain></el-button>
+        <el-button type="info" icon="el-icon-message" circle plain></el-button>
+        <el-button type="warning" icon="el-icon-star-off" circle plain></el-button>
+        <el-button type="danger" icon="el-icon-delete" circle plain></el-button>
     </el-row>
   </div>
 </template>
