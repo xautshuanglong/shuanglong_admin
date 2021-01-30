@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-30 10:38:43
+ * @LastEditTime: 2021-01-30 11:30:23
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
@@ -15,28 +15,39 @@
                 </div>
                 <el-menu :default-openeds="['1']" :router=true @select="onMenuItemSelect">
                     <el-submenu index="1">
-                        <template v-slot:title><i class="el-icon-message"></i>页面布局</template>
+                        <template v-slot:title><i class="el-icon-star-off"></i>基础控件</template>
                         <el-menu-item index="/webui/element-empty">空白页面</el-menu-item>
-                        <el-menu-item index="1-2">选项2</el-menu-item>
-                        <el-menu-item index="1-3">选项3</el-menu-item>
-                        <el-menu-item index="1-4">选项4</el-menu-item>
+                        <el-menu-item index="/webui/element-button">普通按钮</el-menu-item>
                     </el-submenu>
                     <el-submenu index="2">
-                        <template v-slot:title><i class="el-icon-menu"></i>交互控件</template>
-                        <el-menu-item index="/webui/element-button">按钮控件</el-menu-item>
-                        <el-menu-item index="2-2">选项2</el-menu-item>
-                        <el-menu-item index="2-3">选项3</el-menu-item>
-                        <el-menu-item index="2-4">选项4</el-menu-item>
+                        <template v-slot:title><i class="el-icon-notebook-2"></i>表单控件</template>
+                        <el-menu-item index="/webui/element-radio">单选按钮</el-menu-item>
+                        <el-menu-item index="/webui/element-checkbox">多选按钮</el-menu-item>
+                        <el-menu-item index="/webui/element-selector">列表选择</el-menu-item>
+                        <el-menu-item index="/webui/element-datetime-picker">日期时间</el-menu-item>
                     </el-submenu>
                     <el-submenu index="3">
-                        <template v-slot:title><i class="el-icon-setting"></i>数据展示</template>
+                        <template v-slot:title><i class="el-icon-coin"></i>数据控件</template>
                         <el-menu-item index="/webui/element-datatable" >数据表格</el-menu-item>
                         <el-menu-item index="/webui/element-pagination">数据分页</el-menu-item>
                         <el-menu-item index="/webui/element-progress"  >进度显示</el-menu-item>
-                        <el-menu-item index="3-4" :disabled=true>选项4</el-menu-item>
                     </el-submenu>
                     <el-submenu index="4">
-                        <template v-slot:title><i class="el-icon-setting"></i>过渡动画</template>
+                        <template v-slot:title><i class="el-icon-message"></i>消息组件</template>
+                        <el-menu-item index="4-1">选项1</el-menu-item>
+                        <el-menu-item index="4-2">选项2</el-menu-item>
+                        <el-menu-item index="4-3">选项3</el-menu-item>
+                        <el-menu-item index="4-4">选项4</el-menu-item>
+                    </el-submenu>
+                    <el-submenu index="4">
+                        <template v-slot:title><i class="el-icon-location-outline"></i>导航组件</template>
+                        <el-menu-item index="4-1">选项1</el-menu-item>
+                        <el-menu-item index="4-2">选项2</el-menu-item>
+                        <el-menu-item index="4-3">选项3</el-menu-item>
+                        <el-menu-item index="4-4">选项4</el-menu-item>
+                    </el-submenu>
+                    <el-submenu index="4">
+                        <template v-slot:title><i class="el-icon-discover"></i>其他组件</template>
                         <el-menu-item index="4-1">选项1</el-menu-item>
                         <el-menu-item index="4-2">选项2</el-menu-item>
                         <el-menu-item index="4-3">选项3</el-menu-item>
@@ -70,6 +81,10 @@
 <script>
 import ElementEmpty from '@/components/element_ui/ElementEmpty.vue'
 import ElementButton from '@/components/element_ui/ElementButton.vue'
+import ElementRadio from '@/components/element_ui/ElementRadio.vue'
+import ElementCheckbox from '@/components/element_ui/ElementCheckbox.vue'
+import ElementSelector from '@/components/element_ui/ElementSelector.vue'
+import ElementDateTimePicker from '@/components/element_ui/ElementDateTimePicker.vue'
 import ElementDataTable from '@/components/element_ui/ElementDataTable.vue'
 import ElementPagination from '@/components/element_ui/ElementPagination.vue'
 import ElementProgress from '@/components/element_ui/ElementProgress.vue'
@@ -92,6 +107,38 @@ export default {
             component: ElementButton,
             props: {
                 title: 'ElementPlus Button Testing'
+            }
+        },
+        {
+            path: 'element-radio',
+            name: 'ElementRadio',
+            component: ElementRadio,
+            props: {
+                title: 'ElementPlus Radio Testing'
+            }
+        },
+        {
+            path: 'element-checkbox',
+            name: 'ElementCheckbox',
+            component: ElementCheckbox,
+            props: {
+                title: 'ElementPlus Checkbox Testing'
+            }
+        },
+        {
+            path: 'element-selector',
+            name: 'ElementSelector',
+            component: ElementSelector,
+            props: {
+                title: 'ElementPlus Selector Testing'
+            }
+        },
+        {
+            path: 'element-datetime-picker',
+            name: 'ElementDateTimePicker',
+            component: ElementDateTimePicker,
+            props: {
+                title: 'ElementPlus Date or Time Picker Testing'
             }
         },
         {
