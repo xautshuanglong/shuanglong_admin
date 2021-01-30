@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-29 23:12:51
+ * @LastEditTime: 2021-01-30 10:38:43
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
@@ -23,7 +23,7 @@
                     </el-submenu>
                     <el-submenu index="2">
                         <template v-slot:title><i class="el-icon-menu"></i>交互控件</template>
-                        <el-menu-item index="2-1">选项1</el-menu-item>
+                        <el-menu-item index="/webui/element-button">按钮控件</el-menu-item>
                         <el-menu-item index="2-2">选项2</el-menu-item>
                         <el-menu-item index="2-3">选项3</el-menu-item>
                         <el-menu-item index="2-4">选项4</el-menu-item>
@@ -68,10 +68,11 @@
 </template>
 
 <script>
-import ElementDataTable from '@/components/ElementDataTable.vue'
-import ElementEmpty from '@/components/ElementEmpty.vue'
-import ElementPagination from '@/components/ElementPagination.vue'
-import ElementProgress from '@/components/ElementProgress.vue'
+import ElementEmpty from '@/components/element_ui/ElementEmpty.vue'
+import ElementButton from '@/components/element_ui/ElementButton.vue'
+import ElementDataTable from '@/components/element_ui/ElementDataTable.vue'
+import ElementPagination from '@/components/element_ui/ElementPagination.vue'
+import ElementProgress from '@/components/element_ui/ElementProgress.vue'
 
 export default {
     name: 'WebUI',
@@ -84,6 +85,14 @@ export default {
             path: 'element-empty',
             name: 'ElementEmpty',
             component: ElementEmpty
+        },
+        {
+            path: 'element-button',
+            name: 'ElementButton',
+            component: ElementButton,
+            props: {
+                title: 'ElementPlus Button Testing'
+            }
         },
         {
             path: 'element-datatable',
