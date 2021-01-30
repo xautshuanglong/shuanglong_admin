@@ -2,13 +2,46 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-29 00:51:40
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-30 10:40:13
+ * @LastEditTime: 2021-01-30 13:21:32
  * @FilePath: \shuanglong_admin\src\components\element_ui\ElementButton.vue
  * @Description: ElementPlus Button
 -->
 <template>
   <div class="element-button">
     <h1>{{ title }}</h1>
+
+    <el-row>
+        <el-button>默认按钮</el-button>
+        <el-button type="primary">主要按钮</el-button>
+        <el-button type="success">成功按钮</el-button>
+        <el-button type="info">信息按钮</el-button>
+        <el-button type="warning">警告按钮</el-button>
+        <el-button type="danger">危险按钮</el-button>
+    </el-row>
+    <el-row>
+        <el-button plain>朴素按钮</el-button>
+        <el-button type="primary" plain>主要按钮</el-button>
+        <el-button type="success" plain>成功按钮</el-button>
+        <el-button type="info" plain>信息按钮</el-button>
+        <el-button type="warning" plain>警告按钮</el-button>
+        <el-button type="danger" plain>危险按钮</el-button>
+    </el-row>
+    <el-row>
+        <el-button round>圆角按钮</el-button>
+        <el-button type="primary" round>主要按钮</el-button>
+        <el-button type="success" round>成功按钮</el-button>
+        <el-button type="info" round>信息按钮</el-button>
+        <el-button type="warning" round>警告按钮</el-button>
+        <el-button type="danger" round>危险按钮</el-button>
+    </el-row>
+    <el-row>
+        <el-button icon="el-icon-search" circle></el-button>
+        <el-button type="primary" icon="el-icon-edit" circle></el-button>
+        <el-button type="success" icon="el-icon-check" circle></el-button>
+        <el-button type="info" icon="el-icon-message" circle></el-button>
+        <el-button type="warning" icon="el-icon-star-off" circle></el-button>
+        <el-button type="danger" icon="el-icon-delete" circle></el-button>
+    </el-row>
   </div>
 </template>
 
@@ -24,3 +57,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.el-row {
+    margin-top: 10px;
+    margin-bottom: 10px; /* element ui 无效: top 和 bottom 合并了高度，并不会出现间隔 20px */
+}
+</style>

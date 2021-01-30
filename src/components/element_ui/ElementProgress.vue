@@ -2,15 +2,15 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-29 01:17:13
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-29 23:40:13
- * @FilePath: \shuanglong_admin\src\components\ElementProgress.vue
+ * @LastEditTime: 2021-01-30 13:40:46
+ * @FilePath: \shuanglong_admin\src\components\element_ui\ElementProgress.vue
  * @Description: element progress
 -->
 
 <template>
   <div class="element-progress">
     <h1>ElementPlus progress testing !</h1>
-    <div style="">
+    <div>
         <el-progress :percentage="50"></el-progress>
         <el-progress :percentage="100" :format="format"></el-progress>
         <el-progress :percentage="100" status="success"></el-progress>
@@ -18,17 +18,10 @@
         <el-progress :percentage="50" status="exception"></el-progress>
     </div>
 
-    <div>
-        <br>
-        <el-progress :text-inside="true" :stroke-width="20" :percentage="70"></el-progress>
-        <br>
-        <el-progress :text-inside="true" :stroke-width="25" :percentage="100" status="success"></el-progress>
-        <br>
-        <el-progress :text-inside="true" :stroke-width="30" :percentage="80" status="warning"></el-progress>
-        <br>
-        <el-progress :text-inside="true" :stroke-width="35" :percentage="50" status="exception"></el-progress>
-        <br>
-    </div>
+    <el-progress :text-inside="true" :stroke-width="20" :percentage="percentage" />
+    <el-progress :text-inside="true" :stroke-width="25" :percentage="100" status="success"/>
+    <el-progress :text-inside="true" :stroke-width="30" :percentage="percentage" status="warning"/>
+    <el-progress :text-inside="true" :stroke-width="35" :percentage="50" status="exception"/>
 
     <el-progress :percentage="percentage" :color="customColor"></el-progress>
     <el-progress :percentage="percentage" :color="customColorMethod"></el-progress>
@@ -94,3 +87,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.el-progress {
+    margin-top: 10px;
+}
+</style>
