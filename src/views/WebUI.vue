@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-30 23:49:52
+ * @LastEditTime: 2021-01-31 01:32:14
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
@@ -211,7 +211,7 @@ export default {
         })
 
         setInterval(() => {
-            console.log('WebUI --> timeout change value')
+            // console.log('WebUI --> timeout change value')
             id.value += 2
         }, 2000)
 
@@ -228,7 +228,7 @@ export default {
     },
     mounted () {
         console.log('WebUI --> mounted !')
-        console.log('Inside mounted route=', this.$route)
+        // console.log('Inside mounted route=', this.$route)
     },
     beforeUpdate () {
         console.log('WebUI --> before update !')
@@ -248,18 +248,18 @@ export default {
     deactivated () {
         console.log('WebUI --> deactived !')
     },
-    renderTracked () {
-        console.log('WebUI --> renderTracked !')
+    renderTracked ({ key, target, type }) {
+        console.log('WebUI --> renderTracked !', { key, target, type })
     },
-    renderTriggered () {
-        console.log('WebUI --> renderTriggered !')
+    renderTriggered ({ key, target, type }) {
+        console.log('WebUI --> renderTriggered !', { key, target, type })
     },
     errorCaptured () {
         console.log('WebUI --> error captured !')
     },
     methods: {
         onMenuItemSelect (index, indexPath) {
-            console.log('Index=', index, 'IndexPath=', indexPath)
+            // console.log('Index=', index, 'IndexPath=', indexPath)
         }
     }
 }

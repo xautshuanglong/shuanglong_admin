@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-29 00:51:40
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-31 00:04:18
+ * @LastEditTime: 2021-01-31 01:32:05
  * @FilePath: \shuanglong_admin\src\components\element_ui\ElementButton.vue
  * @Description: ElementPlus Button
 -->
@@ -11,7 +11,7 @@
     <h1>{{ title }}</h1>
 
     <el-row>
-        <el-button>默认按钮</el-button>
+        <el-button @click="onButtonFirstClick">默认按钮</el-button>
         <el-button type="primary">主要按钮</el-button>
         <el-button type="success">成功按钮</el-button>
         <el-button type="info">信息按钮</el-button>
@@ -50,6 +50,8 @@
         <el-button type="warning" icon="el-icon-star-off" circle plain></el-button>
         <el-button type="danger" icon="el-icon-delete" circle plain></el-button>
     </el-row>
+
+    <h1 v-if="show_flag">Rerender Testing</h1>
   </div>
 </template>
 
@@ -61,6 +63,27 @@ export default {
     },
     data () {
         return {
+            show_flag: true
+        }
+    },
+    mounted () {
+        console.log('WebUI --> ElementButton --> mounted !')
+    },
+    unmounted () {
+        console.log('WebUI --> ElementButton --> unmounted !')
+    },
+    updated () {
+        console.log('WebUI --> ElementButton --> updated !')
+    },
+    renderTracked ({ key, target, type }) {
+        console.log('WebUI --> ElementButton --> renderTracked !', { key, target, type })
+    },
+    renderTriggered ({ key, target, type }) {
+        console.log('WebUI --> ElementButton --> renderTriggered !', { key, target, type })
+    },
+    methods: {
+        onButtonFirstClick () {
+            this.show_flag = !this.show_flag
         }
     }
 }

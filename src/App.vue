@@ -2,12 +2,12 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-28 15:11:40
+ * @LastEditTime: 2021-01-31 01:33:22
  * @FilePath: \shuanglong_admin\src\App.vue
  * @Description: main app entry
 -->
 <template>
-  <div id="nav">
+  <div id="app">
     <router-link to="/">Home</router-link> |
     <router-link to="/webui">WebUI</router-link> |
     <router-link to="/about">About</router-link>
