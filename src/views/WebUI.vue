@@ -2,7 +2,7 @@
  * @Author: xautshuanglong
  * @Date: 2021-01-28 00:58:16
  * @LastEditor: xautshuanglong
- * @LastEditTime: 2021-01-30 11:30:23
+ * @LastEditTime: 2021-01-30 22:15:35
  * @FilePath: \shuanglong_admin\src\views\WebUI.vue
  * @Description: WebUI 测试入口
 -->
@@ -79,6 +79,7 @@
 </template>
 
 <script>
+import { onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, onActivated, onDeactivated, onErrorCaptured, onRenderTracked, onRenderTriggered } from 'vue'
 import ElementEmpty from '@/components/element_ui/ElementEmpty.vue'
 import ElementButton from '@/components/element_ui/ElementButton.vue'
 import ElementRadio from '@/components/element_ui/ElementRadio.vue'
@@ -166,11 +167,75 @@ export default {
     data () {
         return {}
     },
+    setup () {
+        console.log('WebUI --> setup !')
+        onBeforeMount(() => {
+            console.log('WebUI -> setup -> onBeforeMount')
+        })
+        onMounted(() => {
+            console.log('WebUI -> setup -> onMounted')
+        })
+        onBeforeUpdate(() => {
+            console.log('WebUI -> setup -> onBeforeUpdate')
+        })
+        onUpdated(() => {
+            console.log('WebUI -> setup -> onUpdated')
+        })
+        onBeforeUnmount(() => {
+            console.log('WebUI -> setup -> onBeforeUnmount')
+        })
+        onUnmounted(() => {
+            console.log('WebUI -> setup -> onUnmounted')
+        })
+        onActivated(() => {
+            console.log('WebUI -> setup -> onActivated')
+        })
+        onDeactivated(() => {
+            console.log('WebUI -> setup -> onDeactivated')
+        })
+        onErrorCaptured(() => {
+            console.log('WebUI -> setup -> onErrorCaptured')
+        })
+        onRenderTracked(() => {
+            console.log('WebUI -> setup -> onRenderTracked')
+        })
+        onRenderTriggered(() => {
+            console.log('WebUI -> setup -> onRenderTriggered')
+        })
+    },
+    beforeCreate () {
+        console.log('WebUI --> before create !')
+    },
+    created () {
+        console.log('WebUI --> created !')
+    },
+    beforeMount () {
+        console.log('WebUI --> before mount !')
+    },
     mounted () {
         console.log('WebUI --> mounted !')
-        console.log('route=', this.$route)
-        console.log('route.path=', this.$route.path)
-        console.log('route.query=', this.$route.query)
+        console.log('Inside mounted route=', this.$route)
+    },
+    beforeUpdate () {
+        console.log('WebUI --> before update !')
+    },
+    updated () {
+        console.log('WebUI --> updated !')
+    },
+    beforeUnmount () {
+        console.log('WebUI --> before unmount !')
+    },
+    unmounted () {
+        console.log('WebUI --> unmounted !')
+    },
+    activated () {
+        console.log('WebUI --> actived !')
+    },
+    deactivated () {
+        console.log('WebUI --> deactived !')
+    },
+    errorCaptured () {
+        console.log('WebUI --> error captured !')
     },
     methods: {
         onMenuItemSelect (index, indexPath) {
